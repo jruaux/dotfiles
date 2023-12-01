@@ -1,0 +1,10 @@
+= dotfiles
+.files for macOS
+
+From https://www.atlassian.com/git/tutorials/dotfiles.
+
+* Prior to the installation make sure you have committed the alias to `.oh-my-zsh/custom/aliases.zsh`
+[source,console]
+----
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+----
