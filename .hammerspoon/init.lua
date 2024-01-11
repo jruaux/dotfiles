@@ -1,33 +1,31 @@
 hs.window.animationDuration = 0
 
 units = {
-  right         = { x = 0.50, y = 0.00, w = 0.50, h = 1.00 },
-  left          = { x = 0.00, y = 0.00, w = 0.50, h = 1.00 },
-  top           = { x = 0.00, y = 0.00, w = 1.00, h = 0.66 },
-  bottom        = { x = 0.00, y = 0.67, w = 1.00, h = 0.34 },
-  center        = { x = 0.20, y = 0.00, w = 0.60, h = 1.00 },
-  topleft       = { x = 0.00, y = 0.00, w = 0.50, h = 0.67 },
-  topright      = { x = 0.50, y = 0.00, w = 0.50, h = 0.67 },
-  bottomleft    = { x = 0.00, y = 0.67, w = 0.50, h = 0.33 },
-  bottomleft70  = { x = 0.00, y = 0.33, w = 0.67, h = 0.67 },  
-  bottomright   = { x = 0.50, y = 0.67, w = 0.50, h = 0.33 },
-  bottomright70 = { x = 0.33, y = 0.33, w = 0.67, h = 0.67 },
-  left70        = { x = 0.00, y = 0.00, w = 0.33, h = 1.00 },  
-  right70       = { x = 0.67, y = 0.00, w = 0.33, h = 1.00 },
-  maximum       = { x = 0.00, y = 0.00, w = 1.00, h = 1.00 }
+  right       = { x = 0.50, y = 0.00, w = 0.50, h = 1.00 },
+  left        = { x = 0.00, y = 0.00, w = 0.50, h = 1.00 },
+  up          = { x = 0.00, y = 0.00, w = 1.00, h = 0.66 },
+  down        = { x = 0.00, y = 0.67, w = 1.00, h = 0.34 },
+  center      = { x = 0.20, y = 0.00, w = 0.60, h = 1.00 },
+  upleft      = { x = 0.00, y = 0.00, w = 0.50, h = 0.67 },
+  downright   = { x = 0.50, y = 0.00, w = 0.50, h = 0.67 },
+  downleft    = { x = 0.00, y = 0.67, w = 0.50, h = 0.33 },
+  downleft67  = { x = 0.00, y = 0.33, w = 0.67, h = 0.67 },
+  left33      = { x = 0.00, y = 0.00, w = 0.33, h = 1.00 },
+  left67      = { x = 0.00, y = 0.00, w = 0.67, h = 1.00 },
+  right33     = { x = 0.67, y = 0.00, w = 0.33, h = 1.00 },
+  right67     = { x = 0.33, y = 0.00, w = 0.67, h = 1.00 },
+  max         = { x = 0.00, y = 0.00, w = 1.00, h = 1.00 }
 }
 
 layouts = {
   work = {
---    { name = 'Safari',            app = 'Safari.app',             unit = units.maximum,       screen = 'DELL P2715Q' },
---    { name = 'iTerm2',            app = 'iTerm.app',              unit = units.bottom,        screen = 'DELL P2715Q' },
-    { name = 'Reminders',         app = 'Reminders.app',          unit = units.topleft,      screen = 'Retina Display' },
-    { name = 'Calendar',          app = 'Calendar.app',           unit = units.bottomleft70, screen = 'Retina Display' },
-    { name = 'Mail',              app = 'Mail.app',               unit = units.maximum,      screen = 'Retina Display' },
-    { name = 'Notes',             app = 'Notes.app',              unit = units.left,         screen = 'Retina Display' },
-    { name = 'Slack',             app = 'Slack.app',              unit = units.left,         screen = 'Retina Display' },
-    { name = 'Messages',          app = 'Messages.app',           unit = units.right,        screen = 'Retina Display' },
-    { name = 'Plexamp',           app = 'Plexamp.app',            unit = units.left70,       screen = 'Retina Display' }
+    { name = 'Reminders', app = 'Reminders.app', unit = units.upleft,     screen = 'Retina Display' },
+    { name = 'Calendar',  app = 'Calendar.app',  unit = units.downleft67, screen = 'Retina Display' },
+    { name = 'Mail',      app = 'Mail.app',      unit = units.max,        screen = 'Retina Display' },
+    { name = 'Notes',     app = 'Notes.app',     unit = units.left,       screen = 'Retina Display' },
+    { name = 'Messages',  app = 'Messages.app',  unit = units.left67,     screen = 'Retina Display' },
+    { name = 'Slack',     app = 'Slack.app',     unit = units.left67,     screen = 'Retina Display' },
+    { name = 'Plexamp',   app = 'Plexamp.app',   unit = units.right33,    screen = 'Retina Display' }
   }
 }
 
@@ -81,14 +79,14 @@ cmd = { 'cmd' }
 mash = {'ctrl', 'alt', 'cmd' }
 hs.hotkey.bind(mash, 'right', function() hs.window.focusedWindow():move(units.right, nil, true) end)
 hs.hotkey.bind(mash, 'left',  function() hs.window.focusedWindow():move(units.left, nil, true) end)
-hs.hotkey.bind(mash, 'up',    function() hs.window.focusedWindow():move(units.top, nil, true) end)
-hs.hotkey.bind(mash, 'down',  function() hs.window.focusedWindow():move(units.bottom, nil, true) end)
+hs.hotkey.bind(mash, 'up',    function() hs.window.focusedWindow():move(units.up, nil, true) end)
+hs.hotkey.bind(mash, 'down',  function() hs.window.focusedWindow():move(units.down, nil, true) end)
 hs.hotkey.bind(mash, '.',     function() hs.window.focusedWindow():move(units.center, nil, true) end)
-hs.hotkey.bind(mash, '1',     function() hs.window.focusedWindow():move(units.topleft, nil, true) end)
-hs.hotkey.bind(mash, '2',     function() hs.window.focusedWindow():move(units.topright, nil, true) end)
-hs.hotkey.bind(mash, '3',     function() hs.window.focusedWindow():move(units.bottomleft, nil, true) end)
-hs.hotkey.bind(mash, "4",     function() hs.window.focusedWindow():move(units.bottomright, nil, true) end)
-hs.hotkey.bind(mash, 'm',     function() hs.window.focusedWindow():move(units.maximum, nil, true) end)
+hs.hotkey.bind(mash, '1',     function() hs.window.focusedWindow():move(units.leftup, nil, true) end)
+hs.hotkey.bind(mash, '2',     function() hs.window.focusedWindow():move(units.rightup, nil, true) end)
+hs.hotkey.bind(mash, '3',     function() hs.window.focusedWindow():move(units.leftdown, nil, true) end)
+hs.hotkey.bind(mash, "4",     function() hs.window.focusedWindow():move(units.rightdown, nil, true) end)
+hs.hotkey.bind(mash, 'm',     function() hs.window.focusedWindow():move(units.max, nil, true) end)
 hs.hotkey.bind(mash, 'n',     moveToNextScreen)
 hs.hotkey.bind(mash, '0',     function() runLayout(layouts.work) end)
-hs.hotkey.bind(cmd , 'm',     function() hs.window.focusedWindow():move(units.maximum, nil, true) end)
+hs.hotkey.bind(cmd , 'm',     function() hs.window.focusedWindow():move(units.max, nil, true) end)
