@@ -14,6 +14,6 @@ bindkey '\e[B' history-search-forward
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-alias rmeclipse='find . \( -name ".classpath" -o -name ".project" -o -name ".settings" \) -exec rm -rf "{}" +'
+alias rmeclipse="find . \( -name \".classpath\" -o -name \".project\" -o -name \".settings\" \) -exec rm -rf \"{}\" +"
 
 eval "$(starship init zsh)"
