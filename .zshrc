@@ -1,13 +1,9 @@
+SHELL_SESSIONS_DISABLE=1
+setopt SHARE_HISTORY
+
 # initialize autocompletion
 autoload -U compinit && compinit
 
-setopt APPEND_HISTORY
-setopt SHARE_HISTORY
-HISTFILE=$HOME/.zhistory
-SAVEHIST=1000
-HISTSIZE=999
-setopt HIST_EXPIRE_DUPS_FIRST
-setopt EXTENDED_HISTORY
 setopt NO_BEEP
 
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -18,5 +14,6 @@ bindkey '\e[B' history-search-forward
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias rmeclipse='find . \( -name ".classpath" -o -name ".project" -o -name ".settings" \) -exec rm -rf "{}" +'
 
 eval "$(starship init zsh)"
