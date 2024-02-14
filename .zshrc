@@ -13,6 +13,13 @@ bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-alias rmeclipse="find . \( -name \".classpath\" -o -name \".project\" -o -name \".settings\" \) -exec rm -rf \"{}\" +"
+function rmeclipse() {
+    if [ -z "$1" ]; then
+        echo "Usage: rmeclipse <directory>"
+        return 1
+    fi
+
+    find "$1" \( -name ".classpath" -o -name ".project" -o -name ".settings" \) -exec rm -rf {} +
+}
 
 eval "$(starship init zsh)"
