@@ -1,8 +1,10 @@
 function rmeclipse() {
-    if [ -z "$1" ]; then
-        echo "Usage: rmeclipse <directory>"
+    local directory="${1:-.}"
+
+    if [ ! -d "$directory" ]; then
+        echo "Error: '$directory' is not a directory."
         return 1
     fi
 
-    find "$1" \( -name ".classpath" -o -name ".project" -o -name ".settings" \) -exec rm -rf {} +
+    find "$directory" \( -name ".classpath" -o -name ".project" -o -name ".settings" \) -exec rm -rf {} +
 }
