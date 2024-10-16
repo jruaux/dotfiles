@@ -1,8 +1,0 @@
-# Get editor completions based on the config schema
-"$schema" = 'https://starship.rs/config-schema.json'
-
-[line_break]
-disabled = true
-
-[gcloud]
-disabled = true
